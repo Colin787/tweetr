@@ -10,6 +10,7 @@ html {
   box-sizing: inherit;
 }
 
+
 /*
  * Global layout stuff
  */
@@ -18,8 +19,35 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+main{
+  padding-top: 140px;
+  margin: auto;
+  height: 1000px;
+  width: 450px;
+  background-color: white;
 }
 
+.new-tweet{
+  width: 85%;
+  margin: auto;
+  background-color: grey;
+}
+.textboxArea{
+  margin-left: 5px;
+  width: 97%;
+  padding: 5px;
+}
+.counter{
+  float: right;
+  margin-right: 5px;
+}
+.tweetButt{
+  margin-left: 5px;
+  margin-bottom: 7px;
+
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
