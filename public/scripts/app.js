@@ -4,9 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Test / driver code (temporary). Eventually will get this from the server.
-function createTweetElement(tweetData){
-
-}
 var tweetData = {
   "user": {
     "name": "Newton",
@@ -22,9 +19,39 @@ var tweetData = {
   },
   "created_at": 1461116232227
 }
+$(document).ready(function(){
+  function createTweetElement(newTweetData){
 
+    var tweetContent = newTweetData.content.text;
+    var tweetHandle = newTweetData.user.handle;
+    var tweetUsername = newTweetData.user.name;
+    var tweetAvatar = newTweetData.user.avatars.regular;
+    var tweetCreatedAt = newTweetData.created_at;
+  return `
+    <article class="single-tweet">
+
+      <header class="tweets-header">
+
+        <span class="userAt">${tweetHandle}</span>
+        <img ${tweetAvatar} class="myimg"><h1 class="nameField">${tweetUsername}</h1>
+      </header>
+
+      <div class="tweet-content">
+       <p>${tweetContent}</p>
+      </div>
+
+      <footer class="tweetFooter">
+        <span class="timeSent">${tweetCreatedAt}<span class="icons">⚑ ⇆ ❤</span></span>
+      </footer>
+    </article>`;
+
+
+}
 var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
 console.log($tweet); // to see what it looks like
-$('#allTweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+$('.allTweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+});
+// Test / driver code (temporary)
+
+
+
