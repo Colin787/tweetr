@@ -25,6 +25,8 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <script type="text/javascript" src="/scripts/hoverTweet.js"></script>
   </head>
 
   <body>
@@ -46,22 +48,21 @@
           <span class="counter" id='count'>140 Max!</span>
         </form>
       </section>
-      <section>
-        <article id="allTweets">
-          <header class="allTweetsHeader">
+      <section id="allTweets">
+        <article class="single-tweet">
+          <header class="tweets-header">
             <span class="userAt">@MrFields</span>
             <img src="/images/logo1.png" class="myimg"><h1 class="nameField">Bill Fields</h1>
-
           </header>
-          <div class="tweetContent">
-
+          <div class="tweet-content">
+           <p>Little tweet here!!</p>
           </div>
-          <footer>
-            <span>10 days ago</span>
-            <div></div>
+          <footer class="tweetFooter">
+            <span class="timeSent">10 days ago</span>
           </footer>
         </article>
       </section>
+
     </main>
   </body>
 </html>
