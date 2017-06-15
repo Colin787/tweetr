@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function(){
+  $(".new-tweet").hide();
+  $(".nav-button").on('click', function(){
+    $(".new-tweet").slideToggle();
+    $(".textboxArea").focus();
+  });
+
+
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -52,9 +59,12 @@ $(document).ready(function(){
 
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
-    if($(".textboxArea").val().length > 140 || $(".textboxArea").val() === "") {
-      alert("I QUIT");
-    } else {
+    if($(".textboxArea").val().length > 140) {
+      alert("TOO LONG!!");
+    } else if ($(".textboxArea").val() === "") {
+      alert("EMPTY!!");
+    }
+    else {
       $.ajax({
         method: 'POST',
         url: '/tweets/',
