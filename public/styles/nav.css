@@ -4,7 +4,7 @@
   height: 80px;
   width: 100%;
   color: #e8fdff;
-  background-color: #00a087;
+  background-color: #497a5e;
   padding-left: 2em;
   padding-right: 2em;
 
@@ -17,9 +17,29 @@
   transform: translateY(-50%);
   padding-left: 15px;
 
+
 }
 #nav-bar .logo {
  float: left;
  height: 80px;
  width: 80px;
+}
+.header:hover{
+  transform: rotate(1080deg);
+}
+.logo:hover{
+  color: blue;
+}
+/*TWEETER WORD IN THE NAV BAR*/
+.letter-t:hover{
+  color: green;
+}
+.letter-w:hover{
+  color: tomato;
+}
+.letter-e:hover{
+  color: black;
+}
+.letter-r:hover{
+  color: orange;
 }
