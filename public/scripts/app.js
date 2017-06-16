@@ -4,18 +4,19 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function(){
-  $(".new-tweet").hide();
+
+  $(".new-tweet").hide();//hides form off start
   $(".nav-button").on('click', function(){
     $(".new-tweet").slideToggle();
     $(".textboxArea").focus();
-  });
-
+  });//close for nav button onclick
 
   function escape(str) {
+
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  }//escape func close
 
   function createTweetElement(data){
     var tweetContent = escape(data.content.text);
@@ -36,7 +37,8 @@ $(document).ready(function(){
           <span class="timeSent">${tweetCreatedAt}<span class="icons">⚑ ⇆ ❤</span></span>
         </footer>
       </article>`;
-  }
+  }//close for createTweetElement func
+
   function renderTweets(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -46,16 +48,17 @@ $(document).ready(function(){
       var $tweet = createTweetElement(tweets[i]);
       $('.allTweets').prepend($tweet);
     }
-  }
-
-  loadTweets();
+  }//close for renderTweets func
 
   function loadTweets() {
     $.ajax({
       method: 'GET',
       url: '/tweets/',
     }).done(renderTweets)
-  }
+  }//close for loadTweets func
+
+  loadTweets();
+
 
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -63,19 +66,19 @@ $(document).ready(function(){
       alert("TOO LONG!!");
     } else if ($(".textboxArea").val() === "") {
       alert("EMPTY!!");
-    }
-    else {
+    } else {
       $.ajax({
         method: 'POST',
         url: '/tweets/',
         data: $(this).serialize()
       }).done(function() {
         loadTweets();
-      });
-    }
-  });
-
-});
+        $(".textboxArea").val("");
+        $(".counter").text(140);
+      });//close for .done func
+    }//close for else
+  });//close for .tweet-form on submit
+});//close for doc.ready
 
 
 
