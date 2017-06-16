@@ -41,12 +41,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2 class="compose">Compose Tweet</h2>
+        <h2 class="compose-heading">Compose Tweet</h2>
         <hr>
         <form action="/tweets/" method="POST" class="tweet-form">
-          <textarea class="textboxArea" id='tweetarea' name="text" placeholder="What are you humming about?"></textarea>
+          <textarea class="textboxArea" name="text" placeholder="What are you humming about?"></textarea>
           <br>
-          <input type="submit" value="Tweet" class="tweetButt">
+          <input type="submit" value="Tweet" class="tweet-button">
           <span class="counter" id='count'>140 Max!</span>
         </form>
       </section>
